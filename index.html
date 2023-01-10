@@ -10,7 +10,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>One Page Registration Form</title>
-    <meta name="description" content="A one page church registration web application. This application does not use any framework, just bootstrap, pure JavaScript, HTML and CSS">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="one pager, one page, registration, no framework, javascript, html, css">
     <link type="text/css" rel="stylesheet" href="libraries/bootstrap-5.0.2-dist/css/bootstrap.min.css">
@@ -102,7 +101,7 @@
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <!-- <label>Month</label> -->
-                                        <select class="form-select" id="" aria-label="Floating label select example" name="">
+                                        <select class="form-select" id="bmonth" aria-label="Floating label select example" name="">
                                                 <option>January</option>
                                                 <option>February</option>
                                                 <option>March</option>
@@ -217,12 +216,12 @@
                                 <div class="form-group gender">
                                     <label for="floatingSelect">Marital Status: </label>
                                     <div class="form-check-inline" style="background-color:#d0b0b0; padding:10px; border-radius:40px">
-                                        <input type="radio" class="form-check-input" id="mradio1" name="" value="S" onclick="hideSpouse()">
+                                        <input type="radio" class="form-check-input" id="mradio1" name="marital" value="S" onclick="hideSpouse()">
                                         <label class="form-check-label" for="mradio1">
                                                 SINGLE</label>
                                     </div>
                                     <div class="form-check-inline" style="background-color:royalblue; padding:10px; border-radius:40px;">
-                                        <input type="radio" class="form-check-input" id="mradio2" name="" value="M" onclick="showSpouse()">
+                                        <input type="radio" class="form-check-input" id="mradio2" name="marital" value="M" onclick="showSpouse()">
                                         <label class="form-check-label" for="mradio2">
                                                 MARRIED
                                             </label>
@@ -459,9 +458,9 @@
 
                                 <div style="margin-top: 10px;">
                                     <label>Select your picture</label>
-                                    <input type="file" name="" id="inpFile">
+                                    <input type="file" name="inpFile" id="inpFile">
                                     <div class="image-preview" id="imagePreview">
-                                        <img src="" id="blah" alt="Your Image" class="image-preview__image" alt="profile picture" ">
+                                        <img src="" id="blah" alt="Your Image" class="image-preview__image" alt="profile">
                                         <span class="image-preview__default-text ">Image Preview</span>
                                     </div>
 

@@ -25,7 +25,7 @@ function validate_one() {
     byear = document.getElementById("byear");
     contact = document.getElementById("phone");
     residence = document.getElementById("residence");
-    in_dob = day.value + "/" + bmonth.value + "/" + byear.value;
+    var in_dob = day.value + "/" + bmonth.value + "/" + byear.value;
     default_dob = "1/January/1950";
 
     if (lastname.value == "" || othernames.value == "" || (!genderM.checked && !genderF.checked) || in_dob ==
@@ -261,8 +261,8 @@ function callswal() {
                 'You can append a backend script to save data in database',
                 'success'
             );
-            
-            
+
+
         }
     });
 }
