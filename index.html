@@ -1,0 +1,500 @@
+<!-------    
+    Author: Emmanuel De-Graft
+    Tags: JavaScript, HTML, CSS, Bootstrap
+       --->
+
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Page Registration Form</title>
+    <meta name="description" content="A one page church registration web application. This application does not use any framework, just bootstrap, pure JavaScript, HTML and CSS">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="one pager, one page, registration, no framework, javascript, html, css">
+    <link type="text/css" rel="stylesheet" href="libraries/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="libraries/styles/style.css">
+    <script src="libraries/bootstrap-5.0.2-dist/js/swal.js"></script>
+    <script src="libraries/bootstrap-5.0.2-dist/js/jquery.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 style="color: #d0b0b0;">[CHURCH NAME]</h5>
+                    </div>
+
+                </div>
+                <div class="row title">
+                    <div class="col-md-12">
+                        <h2>Register New Member</h2>
+                        <p class="info">Welcome to the registration app.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form method="post" id="form" action="" enctype="multipart/form-data">
+
+                <section class="form_body" id="form_body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="" class="form-control" id="surname" placeholder="Last Name" style="text-transform:uppercase">
+                                        <label for="floatingInput">Last Name</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="" class="form-control" id="othername" placeholder="Other names">
+                                        <label for="floatingInput">Other Names</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group gender">
+                                    <label for="floatingSelect">Gender: </label>
+                                    <div class="form-check-inline" style="background-color:#d0b0b0; padding:10px; border-radius:40px">
+                                        <input type="radio" class="form-check-input" id="radio1" name="gender" value="M">
+                                        <label class="form-check-label" for="radio1">
+                                                MALE</label>
+                                    </div>
+                                    <div class="form-check-inline" style="background-color:royalblue; padding:10px; border-radius:40px;">
+                                        <input type="radio" class="form-check-input" id="radio2" name="gender" value="F">
+                                        <label class="form-check-label" for="radio2">
+                                                FEMALE
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row" style="margin-top:20px">
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <!-- <label>Day</label> -->
+                                        <select class="form-select" name="" id="bday">
+                                                <script>
+                                                    (function() { // don't leak
+                                                        var elm = document.getElementById('bday'), // get the select
+                                                            df = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
+                                                        for (var i = 1; i <= 31; i++) { // loop, i like 42.
+                                                            var option = document.createElement('option'); // create the option element
+                                                            option.value = i; // set the value property
+                                                            option.appendChild(document.createTextNode(i)); // set the textContent in a safe way.
+                                                            df.appendChild(option); // append the option to the document fragment
+                                                        }
+                                                        elm.appendChild(df); // append the document fragment to the DOM. this is the better way rather than setting innerHTML a bunch of times (or even once with a long string)
+                                                    }());
+                                                </script>
+                                                       
+                                            </select>
+                                        <label for="floatingSelect">Birth Day</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <!-- <label>Month</label> -->
+                                        <select class="form-select" id="" aria-label="Floating label select example" name="">
+                                                <option>January</option>
+                                                <option>February</option>
+                                                <option>March</option>
+                                                <option>April</option>
+                                                <option>May</option>
+                                                <option>June</option>
+                                                <option>July</option>
+                                                <option>August</option>
+                                                <option>September</option>
+                                                <option>October</option>
+                                                <option>november</option>
+                                                <option>December</option>
+                                            </select>
+                                        <label for="floatingSelect">Birth Month</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <!-- <label>Year</label> -->
+                                        <select class="form-select" name="" id="byear">
+                                                <script>
+                                                    (function() { // don't leak
+                                                        var elm = document.getElementById('byear'), // get the select
+                                                            df = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
+                                                        for (var i = 1950; i <= 2023; i++) { // loop, i like 42.
+                                                            var option = document.createElement('option'); // create the option element
+                                                            option.value = i; // set the value property
+                                                            option.appendChild(document.createTextNode(i)); // set the textContent in a safe way.
+                                                            df.appendChild(option); // append the option to the document fragment
+                                                        }
+                                                        elm.appendChild(df); // append the document fragment to the DOM. this is the better way rather than setting innerHTML a bunch of times (or even once with a long string)
+                                                    }());
+                                                </script>
+                                            </select>
+                                        <label for="floatingSelect">Birth Year</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 20px;">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="tel" name="" class="form-control" id="phone" placeholder="Contact/Phone/Mobile Number">
+                                        <label for="floatingInput">Contact</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="" class="form-control" id="residence" placeholder="Residential Address/ Digital Address">
+                                        <label for="floatingInput">Residence</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6"></div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="input form-control btn btn-primary" onclick="one_to_two()">Next</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!----------   2nd panel ---------------------------------------------------->
+
+                <section class="form_body2" id="form_body2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="" class="form-control" id="hometown" placeholder="Home Town">
+                                        <label for="floatingInput">Home Town</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <!-- <label>Month</label> -->
+                                        <select class="form-select" id="homeregion" aria-label="Floating label select example" name="">
+                                                <option value="">Hometown Region</option>
+                                                <option value="Oti Region (Dambai)">Oti Region (Dambai)</option>
+                                                <option value="Bono East Region (Techiman)">Bono East Region (Techiman)</option>
+                                                <option value="Ahafo Region (Goaso)">Ahafo Region (Goaso)</option>
+                                                <option value="Bono Region (Sunyani)">Bono Region (Sunyani)</option>
+                                                <option value="North East Region (Nalerigu)">North East Region (Nalerigu)</option>
+                                                <option value="Savannah Region (Damango)">Savannah Region (Damango)</option>
+                                                <option value="Western North Region (Sefwi Wiawso)">Western North Region (Sefwi Wiawso)</option>
+                                                <option value="Western Region (Sekondi)">Western Region (Sekondi)</option>
+                                                <option value="Volta Region (Ho)">Volta Region (Ho)</option>
+                                                <option value="Greater Accra Region (Accra)">Greater Accra Region (Accra)</option>
+                                                <option value="Eastern Region (Koforidua)">Eastern Region (Koforidua)</option>
+                                                <option value="Ashanti Region (Kumasi)">Ashanti Region (Kumasi)</option>
+                                                <option value="Northern Region (Tamale)">Northern Region (Tamale)</option>
+                                                <option value="Upper East Region (Bolgatanga)">Upper East Region (Bolgatanga)</option>
+                                                <option value="Upper West Region (WA)">Upper West Region (WA)</option>
+                                                <option value="Central Region (Cape Coast)">Central Region (Cape Coast)</option>
+                                            </select>
+                                        <label for="floatingSelect">Home Town Region</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group gender">
+                                    <label for="floatingSelect">Marital Status: </label>
+                                    <div class="form-check-inline" style="background-color:#d0b0b0; padding:10px; border-radius:40px">
+                                        <input type="radio" class="form-check-input" id="mradio1" name="" value="S" onclick="hideSpouse()">
+                                        <label class="form-check-label" for="mradio1">
+                                                SINGLE</label>
+                                    </div>
+                                    <div class="form-check-inline" style="background-color:royalblue; padding:10px; border-radius:40px;">
+                                        <input type="radio" class="form-check-input" id="mradio2" name="" value="M" onclick="showSpouse()">
+                                        <label class="form-check-label" for="mradio2">
+                                                MARRIED
+                                            </label>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 20px;">
+                                <div class="col-md-12" id="spouse-name">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="" id="spousename" placeholder="Name of Spouse">
+                                        <label for="floatingInput">Name of Spouse</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating" style="margin-bottom: 10px;">
+
+                                        <select class="form-select" id="myselection" name="" aria-label="Floating label select example">
+                                                <option value="1">Educational Level</option>
+                                                <option value="Primary School">Primary School</option>
+                                                <option value="Junior High School">Junior High School</option>
+                                                <option value="Senior High School">Senior High School</option>
+                                                <option value="Technical School">Technical School</option>
+                                                <option value="University">University</option>
+                                                <option value="Graduate Degree">Graduate Degree</option>
+                                                <option value="">Other</option>
+                                            </select>
+                                        <label for="floatingSelect">Educational Level</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3" id="other">
+                                        <input type="text" id="oeducation" class="form-control" placeholder="Other Educational Level" name="">
+                                        <label for="floatingInput">Other Educational Level</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3" id="profession">
+                                        <input type="text" class="form-control" placeholder="Profession" name="">
+                                        <label for="floatingInput">Profession</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6" style="margin-bottom: 10px;">
+                                        <button type="button" class="input_prev form-control btn btn-primary" onclick="two_to_one()">Previous</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="input form-control btn btn-primary" onclick="two_to_three()">Next</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!------------- 3rd panel ------------------------------------------------------->
+
+                <section class="form_body3" id="form_body3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="fathername" name="" placeholder="Father's Name">
+                                        <label for="floatingInput">Father's Name</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating" style="margin-bottom: 10px;">
+                                        <select id="guard_status" class="form-select" name="" aria-label="Floating label select example">
+                                                <option value="" selected>Alive</option>
+                                                <option value="1">Deceased</option>
+                                            </select>
+                                        <label for="floatingSelect">Father</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3" id="father_contact">
+                                        <input type="tel" id="fatherphone" class="form-control" placeholder="Father's Contact" name="">
+                                        <label for="floatingSelect">Father's Contact</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-------------------------------------mother's --->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="mothername" name="" placeholder="Mother's Name">
+                                        <label for="floatingInput">Mother's Name</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating" style="margin-bottom: 10px;">
+                                        <select id="guard_mum" class="form-select" name="" aria-label="Floating label select example">
+                                                <option value="" selected>Alive</option>
+                                                <option value="1">Deceased</option>
+                                            </select>
+                                        <label for="floatingSelect">Mother</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3" id="mother_contact">
+                                        <input type="tel" id="motherphone" class="form-control" placeholder="Mother's Contact" name="">
+                                        <label for="floatingSelect">Mother's Contact</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6" style="margin-bottom: 10px;">
+                                        <button type="button" class="input_prev form-control btn btn-primary" onclick="three_to_two()">Previous</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="input form-control btn btn-primary" onclick="three_to_four()">Next</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!---------- 4th panel ------------------------------------------------------------->
+                <section class="form_body4" id="form_body4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" name="" class="form-control" id="bap_place" placeholder="Place of Baptism">
+                                        <label for="floatingInput">Place of Baptism</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating" style="margin-bottom: 10px;">
+                                        <select id="baptismselection" class="form-select" name="" aria-label="Floating label select example">
+                                                <option value="1">Method of Baptism</option>
+                                                <option value="Immersion">Immersion</option>
+                                                <option value="Sprinkling">Sprinkling</option>
+                                                <option value="Washing">Washing</option>
+                                                <option value="">Other</option>
+                                            </select>
+                                        <label for="floatingSelect">Method of Baptism</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3" id="otherBaptism">
+                                        <input type="text" id="otherbaptism" class="form-control" placeholder="Father's Contact" name="">
+                                        <label for="floatingSelect">Other method of baptism</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating" style="margin-bottom: 10px;">
+                                        <select name="" id="roleselection" class="form-select" aria-label="Floating label select example">
+                                                <option value="null">Role at church</option>
+                                                <option value="Pastor">Pastor</option>
+                                                <option value="Elder">Elder</option>
+                                                <option value="Instrumentalist">Instrumentalist</option>
+                                                <option value="Vocalist">Vocalist</option>
+                                                <option value="Usher">Usher</option>
+                                                <option value="Technical & Media">Technical & Media</option>
+                                                <option value="Help Ministry">Help Ministry</option>
+                                                <option value="Member">Member</option>
+                                                <option value="">Other</option>
+                                            </select>
+                                        <label for="floatingSelect">Church Role</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3" id="other_role">
+                                        <input type="text" id="otherole" class="form-control" placeholder="Father's Contact" name="">
+                                        <label for="floatingSelect">Other Role</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6" style="margin-bottom: 10px;">
+                                        <button type="button" class="input_prev form-control btn btn-primary" onclick="four_to_three()">Previous</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="input form-control btn btn-primary" onclick="four_to_five()">Next</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!--------- 5th panel -------------------------------------------------------------------->
+                <section class="form_body5" id="form_body5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+
+                                <div style="margin-top: 10px;">
+                                    <label>Select your picture</label>
+                                    <input type="file" name="" id="inpFile">
+                                    <div class="image-preview" id="imagePreview">
+                                        <img src="" id="blah" alt="Your Image" class="image-preview__image" alt="profile picture" ">
+                                        <span class="image-preview__default-text ">Image Preview</span>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="row " style="margin-bottom: 20px; ">
+                            <div class="col-md-6 ">
+                                <div class="row ">
+                                    <div class="col-md-6 " style="margin-bottom: 10px; ">
+                                        <button type="button " class="input_prev form-control btn btn-primary " onclick="five_to_four() ">Previous</button>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <button type="button " class="input form-control btn btn-primary " onclick="callswal() ">Submit</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript " src="libraries/scripts/script.js " "></script>
